@@ -1,0 +1,257 @@
+$colorSite: #f16d7f;
+
+body {
+    font-family: 'Lato', sans-serif;
+}
+.adress {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    margin-top: 63px;
+    margin-bottom: 79px;
+}
+.product_conteiner_menu {
+    height: 38px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: bold;
+    color: rgba(101, 101, 101, 1);
+    line-height: 20px;
+    line-height: 2;
+    text-transform: uppercase;
+    border-bottom: 1px solid rgba(230, 230, 230, 1);
+}
+.product_conteiner_menu div{
+    align-items: center;
+}
+.product_conteiner{
+    display: flex;
+    height: 162px;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: center;
+    padding-bottom: 25px;
+    border-bottom: 1px solid rgba(230, 230, 230, 1);
+}
+
+.product_conteiner_menu .product_details_name {
+    flex-grow: 0.6;
+    flex-shrink: 2;
+}
+.product_conteiner div{
+    height: 115px;
+    align-items: center;
+}
+.product_details img {
+    width: 100px;
+    height: 115px;
+}
+.product_details {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    color: rgba(101, 101, 101, 1);
+    line-height: 20px;
+}
+
+.product_details_name {
+   display: flex;
+   justify-content: flex-start;
+    width: 157px;
+    flex-wrap: wrap;
+    padding-left: 21px;
+}
+.product_details_price {
+    flex-grow: 0.5;
+    flex-shrink: 2;
+    padding-left: 210px;
+    }
+.product_details_quantity {
+    flex-grow: 0.2;
+}
+.product_details_shiping {
+    flex-grow: 0.2;
+    text-transform: uppercase; 
+}
+.product_details_subtotal {
+    flex-grow: 0.2;
+}
+.product_details_action {
+    flex-grow: 0.15;
+}
+.product_details h3 {
+    font-size: 13px;
+    color: rgba(34, 34, 34, 1);
+    text-transform: uppercase;
+}
+.product_details p {
+    font-size: 13px;
+    color: rgba(87, 87, 87, 1);
+    line-height: 20px;
+    margin-right: 93px;
+}
+.product_details p span {
+    font-size: 13px;
+    font-weight: 300;
+    color: rgba(111, 110, 110, 1);
+    line-height: 20px;
+}
+.product__button {
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 44px;
+    margin-bottom: 63px;
+
+}
+.product_details_button {
+    width: 235px;
+    height: 50px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: rgba(74, 74, 74, 1);
+    text-transform: uppercase;
+    background-color: rgba(255, 255, 255, 1);
+    border:1px solid  rgba(230, 230, 230, 1);
+}
+
+.shipping_adress {
+    width: 355px;
+    height: 268px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    margin-right: 35px;
+}
+.adress h3{
+    margin-bottom: 22px;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: bold;
+    color: rgba(34, 34, 34, 1);
+    text-align: left;
+}
+.shipping_adress .country_down {
+    width: 355px;
+    height: 45px;
+    margin-bottom: 20px;
+    padding-left: 18px;
+    font-size: 13px;
+    font-weight: 300;
+    color: rgba(177, 177, 177, 1);
+    text-align: left;
+}
+.shipping_adress .country_down ::placeholder {
+    font-size: 13px;
+    font-weight: 300;
+    color: rgba(177, 177, 177, 1);
+}
+.shipping_adress input {
+    width: 355px;
+    height: 45px;
+    margin-bottom: 20px;
+    padding-left: 18px;
+    font-size: 13px;
+    font-weight: 300;
+    color: rgba(177, 177, 177, 1);
+    text-align: left;
+}
+.shipping_adress button {
+    width: 100px;
+    height: 35px;  
+    font-size: 11px;
+    font-weight: bold;
+    color: rgba(74, 74, 74, 1);
+    text-align: left;
+    text-transform: uppercase;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 1);
+     border:1px solid  rgba(230, 230, 230, 1);
+}
+.coupon_discount {
+    width: 355px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    margin-right: 35px;
+}
+.coupon_discount p {
+    font-size: 13px;
+    font-weight: 300;
+    color: rgba(74, 74, 74, 1);
+    margin-bottom: 24px;
+}
+.coupon_discount input {
+    width: 355px;
+    margin-top: 22px;
+    padding-left: 18px;
+    height: 44px;
+    font-size: 13px;
+    font-weight: 300;
+    color: rgba(177, 177, 177, 1);
+}
+.coupon_discount button {
+    width: 118px;
+    height: 35px;
+    text-align: center;
+    font-size: 11px;
+    font-weight: bold;
+    color: rgba(74, 74, 74, 1);
+    text-transform: uppercase;
+    margin-top: 80px;
+    background-color: rgba(255, 255, 255, 1);
+    border:1px solid  rgba(230, 230, 230, 1);
+
+}
+
+.proceed {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    flex-wrap: nowrap;
+    width: 360px;
+    height: 214px;
+    background-color: rgba(245, 243, 243, 1);
+}
+.proceed p {
+    font-size: 11px;
+    color: rgba(74, 74, 74, 1);
+    text-transform: uppercase;
+    margin-top: 45px;
+    margin-right: 41px;
+}
+.proceed h3 {
+    font-size: 16px;
+    font-weight: bold;
+    color: rgba(34, 34, 34, 1);
+    text-transform: uppercase;
+    margin-right: 41px;
+    margin-top: 14px;
+}
+.proceed h3 span{
+    color: $colorSite;
+}
+.proceed_button {
+    width: 273px;
+    height: 50px;
+    background-color:$colorSite;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 1);
+    text-transform: uppercase;
+    border: none; 
+    align-self: center;
+}

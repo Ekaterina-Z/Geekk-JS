@@ -1,0 +1,157 @@
+.registration  {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 89px;
+    margin-bottom: 129px;
+}
+.registration__form {
+    width: 974px;
+    display: flex;
+    flex-direction: column;
+    letter-spacing: 0.1px;
+    padding-top: 30px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid  rgba(230, 230, 230, 1);
+    & h3 {
+        font-size: 16px;
+        font-weight: bold;
+        color: rgba(34, 34, 34, 1);
+        text-transform: uppercase;
+    }
+    & h5 {
+        font-size: 13px;
+        font-weight: bold;
+        color: rgba(34, 34, 34, 1);
+        text-transform: uppercase;
+        line-height: 2;
+    }
+    & p {
+        font-size: 13px;
+        color: rgba(179, 178, 178, 1);
+        line-height: 20px;
+    }
+    & label {
+        font-size: 12px;
+        font-weight: bold;
+        color: rgba(34, 34, 34, 1);
+        text-align: right;
+        text-transform: uppercase;
+        line-height: 20px;
+    }
+    & legend {
+        font-size: 13px;
+        font-weight: bold;
+        color: rgba(34, 34, 34, 1);
+        text-transform: uppercase;
+        line-height: 2;
+    }
+    & details summary{
+        max-width: fit-content;
+        text-align: left;
+        border: none;
+        background-color: white;
+    }
+    & summary::-webkit-details-marker {
+        display: none;
+    }
+    & summary :hover {
+        color: $colorSite;
+    }
+    & summary  {
+        max-width: fit-content;
+    }
+}
+.registration__form_shipping {
+    display: flex;
+    justify-content: space-between;
+    align-items: space-between;
+    height: 394px;
+}
+
+.registration__form_left {
+    display: flex;
+    width: 500px;
+    margin-left: 35px;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    border: none;
+    & input {
+        float: left;
+        border:2px; 
+        margin-right: 14px;
+    }
+    & label {
+        font-size: 12px;
+        font-weight: bold;
+        color: rgba(34, 34, 34, 1);
+        text-transform: uppercase;
+        padding-top: 20px;
+        text-align: start;
+    }
+    & legend {
+        padding-top: 49px;
+    }
+    & h5 {
+        padding-top: 25px;
+    }
+    &_button_submit {
+        width: 180px;
+        height: 50px;
+        font-size: 14px;
+        font-weight: bold;
+        background-color: rgba(255, 255, 255, 1);
+        text-transform: uppercase;
+        border: 1px solid  rgba(230, 230, 230, 1);
+        margin-top: 38px;
+    }
+}
+
+.registration__form_right {
+    display: flex;
+    width: 400px;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    border: none;
+    & input {
+        float: left;
+        border: 1px solid rgba(230, 230, 230, 1);
+        width: 390px;
+        height: 45px;
+    }
+    & legend {
+        padding-top: 49px;
+    }
+    & label {
+        text-align: left;
+        margin-bottom: 16px;
+        line-height: 5px;
+    }
+    & p {
+        margin-bottom: 23px;
+    }
+    & span { 
+        font-size: 13px;
+        color: rgba(255, 13, 13, 1);
+        line-height: 20px
+    }
+    &_button_submit {
+        width: 180px;
+        height: 50px;
+        font-size: 14px;
+        font-weight: bold;
+        background-color: rgba(255, 255, 255, 1);
+        text-transform: uppercase;
+        border: 1px solid  rgba(230, 230, 230, 1);
+        margin-top: 38px;
+    }
+    & a {
+        float: right;
+        margin-top:-40px;
+        font-size: 12px;
+        font-weight: bold;
+        color: rgba(34, 34, 34, 1);
+        line-height: 20px;
+        margin-right: 80px;
+    }
+}

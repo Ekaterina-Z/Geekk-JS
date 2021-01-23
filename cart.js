@@ -109,7 +109,7 @@ const renderProduct = (name, price,prod_image='') => {
                       <a href="#" class="product__name">${name}</a>
                      <div class="product__price"> ${ price }</div>
                 </div>
-                <a class="product__add" >Add to Cart</a>
+                <button class="product__add" >Add to Cart</button>
                 </div>
             </div>`;
 };
@@ -124,3 +124,5 @@ const renderProducts = (list) => {
 };
 
 renderProducts(products);
+
+//* НЕ понимаю как удалить запятые при выводе элементов из массива, метод join не помогает *//
