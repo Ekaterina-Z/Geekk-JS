@@ -96,8 +96,6 @@ const products = [
         availebel: true
     },
 ];
-
-
 document.getElementById('cartButton').addEventListener("click", hiddenCloseСlick);
 function hiddenCloseСlick() {
     let element = document.getElementById('productCart');
@@ -106,8 +104,6 @@ function hiddenCloseСlick() {
     } else {
         element.style.display = "none"}
 };
-
-
 const renderProduct = (name, price,prod_image='', currency) => {
     return `<div class="product" id="product">
                 <a href="#">
@@ -117,20 +113,18 @@ const renderProduct = (name, price,prod_image='', currency) => {
                       <a href="#" class="product__name">${name}</a>
                      <div class="product__price"> ${ price}  ${currency}</div> 
 <!--                      как  можно проще добавить значек доллара?-->
-                </div>
+                     </div>
                 <button class="product__add" >Add to Cart</button>
                 </div>
             </div>`;
 };
-
 const renderProducts = (list) => {
     const productList = list.map(function (product) {
         return renderProduct(product.name, product.price, product.prod_image, product.currency);
     });
-    document.querySelector('.product-box').innerHTML = productList;
+    document.querySelector('.product-box').innerHTML = productList ;
     // insertAdjacentHTML();
 };
-
 renderProducts(products);
 
 //* НЕ понимаю как удалить запятые при выводе элементов из массива, метод join не помогает *//
