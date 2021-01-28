@@ -122,7 +122,7 @@ const renderProducts = (list) => {
     const productList = list.map(function (product) {
         return renderProduct(product.name, product.price, product.prod_image, product.currency);
     });
-    document.querySelector('.product-box').innerHTML = productList ;
+    document.querySelector('.product-box').innerHTML = productList.join('') ;
     // insertAdjacentHTML();
 };
 renderProducts(products);
