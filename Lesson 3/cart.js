@@ -1,4 +1,4 @@
-const API = 'https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/';
+// const API = 'https://github.com/Ekaterina-Z/Geekk-JS/tree/master/Lesson%203/';
 
 
 // function makeGETRequest(url, callback) {
@@ -11,58 +11,144 @@ const API = 'https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-a
 //     });
 // }
 
-class ProductItem  {
-    constructor(product, img='http://localhost:63342/GekkProject/img/product/product-3.png') {
+class Product {
+    constructor(id, prod_image, price, name, currency) {
         this.id = product.id;
-        this.img = img;
-        this.price= product.price;
-        this.product_name = product.product_name;
+        this.prod_image = product.prod_image;
+        this.price = product.price;
+        this.name = product.name;
         this.id = product.id;
-        // this.currency = product.currency;
-    }
-    render() {
-        return `
-        <div class="product" id="${this.id}">
-                <a href="#">
-                <img class="product__img" src="${this.img}" alt="img" />
-                </a>
-                <div class="product__content">
-                      <a href="#" class="product__name">${this.product_name}</a>
-                     <div class="product__price"> ${this.price} \u20bd </div> 
-                     </div>
-                <button class="product__add" onclick="addToCart()" >Add to Cart</button>
-                </div>
-            </div>`;
+        this.currency = product.currency;
     }
 }
-class  ProductsList {
-    constructor(container = '.product-box') {
+class CatalogProduct extends Product {
+    constructor(id, prod_image, price, name, currency) {
+        super(id, prod_image, price, name, currency);
+    };
+    render(i, container, source) {
+        let catalog = document.querySelector(container);
+        catalog. insertAdjacentHTML ( 'beforeend',
+            ` <div class="center product-box">
+                    <div class="product" id="${source[i].id}">
+                        <a href="#">
+                        <img class="product__img" src="${source[i].prod_image}" alt="img" />
+                        </a>
+                        <div class="product__content">
+                              <a href="#" class="product__name">${source[i].name}</a>
+                             <div class="product__price"> ${source[i].price} \u20bd </div> 
+                             </div>
+                        <button class="product__add" onclick="addToCart()">Add to Cart</button>
+                        </div>
+                   </div>
+                   </div>`);
+        return catalog;
+    }
+}
+class ControlBlock {
+    renderCatalog(data) {
+        catalog.render(data);
+    };
+    totalInfoInstanceInit(data, container) {
+        totalInfoInstance.init(data, container);
+    };
+    dropBasket() {
+        cart.dropBasket();
+    };
+}
+class CartProduct extends Product{
+    constructor(id, prod_image, price, name, currency) {
+        super(id, prod_image, price, name, currency);
+    };
+    render(i,container, source) {
+        let cart =document.querySelector('header__right_cart');
+        cart.insertAdjacentHTML ('beforeend',
+            `<div class="header__right_cart_box1" id="${source[i].id}">
+                    <a  class="header__right_cart_img" href="#">
+                    <img src = "${source[i].prod_image}" alt="img"/> </a>
+                    <div class="header__right_cart_content">
+                        <h3>${source[i].name}</h3>
+                        <br />
+                        <p>1   <span>x</span> ${source[i].price}</p>
+                    </div>
+                    <button class="header__right_cart_close" id ="delProduct${source[i].id}"><p>&#9421;</p></button>
+                </div>`);
+                return cart;
+    };
+    btnRemoveFromCart (i)
+                    {
+                        let deletButtonCart = document.querySelector ('#delProduct${cart.productInCart[i].id}')
+                        deletButtonCart.addEventListener('click', () => {
+                            cart.productInCart.splice(i,1);
+                            cart.reloadCart();
+                        })
+                    };
+}
+class CartList {
+    constructor(container = 'header__right_cart') {
         this.container = container;
-        this.products = [];
-        this.allProducts = [];
+        this.productsInCart = [];
+        this.init()
+    };
+    init() {
+        if (this.productsInCart.length !==0) {
+            this.productsInCart.forEach((item,i) => {
+                const productInCart = new CartProduct(item.name, item.prod_image, item.price, item.id, item.currency);
+                productInCart.render(i,this.container, this.productsInCart);
+                productInCart.btnRemoveFromCart(i);
+            })
+        }
+    };
+    dropCart(){
+        this.productsInCart.splice(0);
+        this.reloadCart();
+    };
+    reloadCart() {
+        this.clearCart();
+        this.init(this.container);
+    };
+
+    clearCart (){
+        let el = document.querySelector(this.container);
+        el.innerHTML = ``;
+    };
+}
+
+class  ProductsList {
+    constructor(container = '.product-box', api = 'https://github.com/Ekaterina-Z/Geekk-JS/tree/master/Lesson%203/') {
+        this.container = container;
+        this.API =api;
+        // this.products = [];
         this.getProducts().then((data) => {
             this.products = [...data];
             this.render();
         });
-        // this.totalSumm();
-        }
+    }
 
     getProducts() {
-        return fetch(`${API}catalogData.json`)
+        return  fetch(`${this.API}Products.json`,{
+            mode: 'no-cors',
+            method: 'GET',
+            headers: {
+                'Access-Control-Allow-Origin': '*',
+                "Access-Control-Allow-Headers": "Content-Type",
+                'Content-Type': 'application/json'
+            }})
             .then((response) => response.json())
             .catch((error)=> {
                 console.log(error);
             });
     }
 
-    render() {
-        const block = document.querySelector(this.container);
-        for (let product of this.products) {
-            const productObject = new ProductItem(product);
-            this.allProducts.push(productObject);
-            block.insertAdjacentHTML('afterbegin', productObject.render());
-        }
-    }
+    render(data) {
+        data.forEach((item, i) => {
+            const productInList = new CatalogProduct(item.name, item.prod_image, item.currency, item.price,item.id);
+            productInList.render(i, this.container, data);
+        });
+    };
+    clearCatalog() {
+        let catalog = document.querySelector(this.container);
+        catalog.innerHTML = '';
+    };
 
     // totalSumm(result) {
     //     document.querySelector('.price').innerHTML = result;
@@ -83,5 +169,9 @@ function hiddenCloseСlick() {
         element.style.display = "none"}
 }
 
+const catalog = new ProductsList();
+const cart = new CartList();
 
-const productList = new ProductsList();
+
+
+
