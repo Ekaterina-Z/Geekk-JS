@@ -1206,7 +1206,7 @@ a {
           justify-content: space-between;
   -ms-flex-line-pack: end;
       align-content: flex-end;
-  background-image: url(img/48.png);
+  background-image: url(../img/48.png);
   background-repeat: no-repeat;
   background-position: center 1px 1px;
   height: 38px;
@@ -1672,7 +1672,7 @@ details[open] > .bar_details::after {
 }
 
 .drop__link .drop_sale {
-  background-image: url(img/1802.png);
+  background-image: url(../img/1802.png);
   background-repeat: no-repeat;
   width: 235px;
   height: 118px;
@@ -1725,7 +1725,7 @@ details[open] > .bar_details::after {
       -ms-flex-align: center;
           align-items: center;
   height: 614px;
-  background-image: url(img/promo_back.png);
+  background-image: url(../img/promo_back.png);
   background-repeat: no-repeat;
   background-position: center -51px;
 }
@@ -1813,7 +1813,7 @@ details[open] > .bar_details::after {
       flex-wrap: wrap;
   height: 542px;
   width: 560px;
-  background-image: url(img/man.png);
+  background-image: url(../img/man.png);
   background-repeat: no-repeat;
   background-position: center;
   margin-bottom: 30px;
@@ -1832,7 +1832,7 @@ details[open] > .bar_details::after {
           flex-direction: column;
   height: 261px;
   width: 560px;
-  background-image: url(img/money.png);
+  background-image: url(../img/money.png);
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -1858,7 +1858,7 @@ details[open] > .bar_details::after {
           flex-direction: column;
   height: 261px;
   width: 560px;
-  background-image: url(img/women.png);
+  background-image: url(../img/women.png);
   background-repeat: no-repeat;
   background-position: center;
   margin-bottom: 20px;
@@ -1877,7 +1877,7 @@ details[open] > .bar_details::after {
           flex-direction: column;
   height: 560px;
   width: 542;
-  background-image: url(img/child.png);
+  background-image: url(../img/child.png);
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -2062,7 +2062,7 @@ details[open] > .bar_details::after {
           justify-content: flex-start;
   -ms-flex-line-pack: start;
       align-content: flex-start;
-  background-image: url(img/131fon.png);
+  background-image: url(../img/131fon.png);
   background-repeat: no-repeat;
   background-position: center;
   padding-top: 113px;
@@ -2072,7 +2072,7 @@ details[open] > .bar_details::after {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background-image: url(img/1314.png);
+  background-image: url(../img/1314.png);
   width: 767px;
   height: 529px;
   margin-top: -56px;
@@ -2180,7 +2180,7 @@ details[open] > .bar_details::after {
 
 /*------------subscribe--------*/
 .subscribe {
-  background: url(img/2196.png) no-repeat center, url(img/2194.png) no-repeat center;
+  background: url(../img/2196.png) no-repeat center, url(../img/2194.png) no-repeat center;
   background-position: center -1px;
   height: 438px;
   padding-top: 111px;
