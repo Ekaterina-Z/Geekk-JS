@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../scc/style.css">
+    <script src="cart.js"></script>
     <title>Cart</title>
 </head>
 <body>
@@ -35,7 +36,7 @@
             <button  class="header__cart" id="cartButton"
             ><img src="../img/cart.png" alt="cartButton"
             /></button>
-        <div class="header__right_cart" id="productCart" >
+            <div class="header__right_cart" id="productCart">
                 <div class="header__right_cart_box1" id="product">
                     <a  class="header__right_cart_img"
                     ><img src="../img/product/1821.png"
@@ -45,18 +46,18 @@
                         <br />
                         <p>1   <span>x</span>  $250</p>
                     </div>
-                    <button class="header__right_cart_close" onclick="removeFromCart"><p>&#9421;</p></button>
+                    <button class="header__right_cart_close"><p>&#9421;</p></button>
                 </div>
-            <div>
-                <div class="header__right_cart_price">
-                    <h2>Total</h2>
-                    <h2>$ 500.00</h2>
+                <div>
+                    <div class="header__right_cart_price">
+                        <h2>Total</h2>
+                        <h2>$ 500.00</h2>
+                    </div>
+                    <button class="header__right_cart_button1">Check OUT</button>
+                    <button class="header__right_cart_button2"> <a href="shoping_card.html"></a>Go to cart</button>
                 </div>
-                <button class="header__right_cart_button1">Check OUT</button>
-                <button class="header__right_cart_button2"> <a href="shoping_card.html"></a>Go to cart</button>
             </div>
         </div>
-    </div>
     </div>
 
     <div class="button">
@@ -65,9 +66,12 @@
     </div>
 </header>
 <div class="center price" style=" font-size:20px; color: black; display:inline-block; width:400px; "></div>
-<!--<div class="center product-box">-->
-<!--</div>-->
+<div>
+    <button class="catalog-button" data-load="Products.json" onclick="loadBut();">Загрузить товары</button>
+</div>
+<div class="center product-box">
+</div>
 </body>
-<script src="cart.js"></script>
+
 </html>
 
