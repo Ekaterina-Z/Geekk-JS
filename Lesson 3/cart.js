@@ -84,12 +84,12 @@ class CartProduct {
     render () {
         return ` <div class="header__right_cart_box1" id="${this.id}">
                     <a  class="header__right_cart_img"
-                    ><img src="${this.prod_image}"
+                    ><img src="${this.prod_image}" width="72px"; height="85px"
                     /></a>
                     <div class="header__right_cart_content">
                         <h3>${this.name}</h3>
                         <br />
-                        <p>1   <span>x</span>${this.currency} ${this.price}</p>
+                        <p> 1 <span>x</span>${this.currency} ${this.price}</p>
                     </div>
                     <button class="header__right_cart_close"  onclick='deleteItem(${this.id})'><p>&#9421;</p></button>
                 </div>`
@@ -99,43 +99,63 @@ class CartProduct {
 
 class Cart {
     constructor(container = '.header__right_cart') {
-        this.container =container;
-        this.cartProducts =[];
+        this.container = container;
+        this.cartProducts = [];
     }
+
     addToCart(id) {
         let toCart;
-        list.products.forEach( function (item) {
-            if(id == item.id) {
+        list.products.forEach(function (item) {
+            if (id == item.id) {
                 toCart = {
                     id: item.id,
                     prod_image: item.prod_image,
                     name: item.name,
                     price: item.price,
-                    currency:item.currency
+                    currency: item.currency
                 }
             }
         });
         this.cartProducts.push(toCart);
+        this.basketCount();
+        this.totalPrice();
     }
+
     deleteFromBasket(id) {
         let getIdElemen;
-        this.cartProducts.forEach(function(item, i) {
+        this.cartProducts.forEach(function (item, i) {
             let thisId = item.id;
-            if(id == thisId) {
+            if (id == thisId) {
                 getIdElemen = i;
             }
 
         });
         this.cartProducts.splice(getIdElemen, 1);
         this.render();
+        this.basketCount();
+        this.totalPrice();
+
     }
+
+    basketCount() {
+        let count = this.cartProducts.length;
+        document.getElementById('cartcoint').innerHTML = ' (' + count + ')';
+    }
+
+     totalPrice() {
+         let totalGoodsAnswer
+         let price = this.cartProducts.reduce ((summ,{price})=> summ + price,0);
+         return totalGoodsAnswer = document.querySelector('.header__right_cart_price').innerHTML = "TOTAL: $"+ price;
+    }
+    //НЕ УДАЛОСЬ ВПИСАТЬ В КОРЗИНУ
+
     render() {
         let readHtml = '';
         this.cartProducts.forEach((product) => {
             const productItem = new CartProduct(product.id, product.prod_image, product.name, product.price, product.currency);
             readHtml += productItem.render();
         })
-        document.querySelector('.header__right_cart').innerHTML = readHtml;
+        document.querySelector('.header__right_cart').innerHTML = readHtml;  this.totalPrice();
     }
 
 }

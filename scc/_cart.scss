@@ -2,19 +2,19 @@
 .header__right_cart {
   width: 300px ;
   height: 440px;
-  display: none;
+  display: grid;
   background-color: white;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 40% 30% 30%;
   grid-auto-rows: minmax(60px, auto);
   grid-template-areas:
-          "box1 box1"
-          "box2 box2"
-          "box3 box3"
-          "box4 box4"
-          "box5 box5"
-          "box6 box6"
-          "box7 box7"
-          "box8 box8"
+          "box1 box1 box1"
+          "box2 box2 box2"
+          "box3 box3 box3"
+          "box4 box4 box4"
+          "box5 box5 box5"
+          "box6 box6 box6"
+          "box7 box7 box7"
+          "box8 box8 box8"
           "price price"
           "button1 button1"
           "button2 button2";
@@ -87,6 +87,34 @@
   align-items: center;
   border-bottom: 1px solid rgba(230, 230, 230, 1);
 }
+.header__right_cart_box3{
+  grid-area: box3;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 1px solid rgba(230, 230, 230, 1);
+}
+.header__right_cart_box4{
+  grid-area: box4;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 1px solid rgba(230, 230, 230, 1);
+}
+.header__right_cart_box5{
+  grid-area: box5;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 1px solid rgba(230, 230, 230, 1);
+}
+.header__right_cart_box6{
+  grid-area: box6;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 1px solid rgba(230, 230, 230, 1);
+}
 
 .header__right_cart_button1 {
   grid-area: button1;
@@ -101,6 +129,11 @@
   width: 72px;
   height: 85px;
 }
+.header__right_cart_img.img {
+  width: 72px;
+  height: 85px;
+}
+
 .header__cart:hover ~ .header__right_cart {
   display: grid;
   position:absolute;
