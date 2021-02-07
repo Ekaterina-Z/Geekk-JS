@@ -8,7 +8,8 @@
         "color": "red",
         "description": "Compellingly actualize fully researched processes before proactivtt.",
         "size": "XXL",
-        "availebel": true
+        "availebel": true,
+        "prod_class": "header__right_cart_box1"
     },
     {
         "id": "2",
@@ -20,7 +21,8 @@
         "color": "green",
         "description": "Compellingly actualize fully researched processes before proactivtt.",
         "size": "XL",
-        "availebel": true
+        "availebel": true,
+      "prod_class": "header__right_cart_box2"
     },
   {
         "id": "3",
@@ -32,7 +34,8 @@
         "color": "white",
         "description": "Compellingly actualize fully researched processes before proactivtt",
         "size": "L",
-        "availebel": true
+        "availebel": true,
+    "prod_class": "header__right_cart_box3"
   },
   {
         "id": "4",
@@ -44,7 +47,8 @@
         "color": "black",
         "description": "Compellingly actualize fully researched processes before proactivtt.",
         "size": "S",
-        "availebel": true
+        "availebel": true,
+    "prod_class": "header__right_cart_box4"
   },
   {
         "id": "5",
@@ -56,7 +60,8 @@
         "color": "black",
         "description": "Compellingly actualize fully researched processes before proactivtt.",
         "size": "XS",
-        "availebel": true
+        "availebel": true,
+    "prod_class": "header__right_cart_box5"
   },
   {
         "id": "6",
@@ -68,7 +73,8 @@
         "color": "black",
         "description": "Compellingly actualize fully researched processes before proactivtt.",
         "size": "S",
-        "availebel": true
+        "availebel": true,
+    "prod_class": "header__right_cart_box6"
   },
   {
         "id": "7",
@@ -80,7 +86,8 @@
         "color": "black",
         "description": "Compellingly actualize fully researched processes before proactivtt.",
         "size": "XS",
-        "availebel": true
+        "availebel": true,
+    "prod_class": "header__right_cart_box7"
   },
   {
         "id": "8",
@@ -92,5 +99,6 @@
         "color": "black",
         "description": "Compellingly actualize fully researched processes before proactivtt.",
         "size": "XXS",
-        "availebel": true
+        "availebel": true,
+    "prod_class": "header__right_cart_box8"
   }]
