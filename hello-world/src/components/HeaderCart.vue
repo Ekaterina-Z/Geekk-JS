@@ -1,10 +1,8 @@
 <template>
     <div class="header__right">
         <a href="#" class="header__cart"
-        ><img src="@/assets/img/logo.png" alt="cart"
+        ><img src="@/assets/img/cart.png" alt="cart"
         /></a>
-        <!-- <input type="checkbox"  class="header__right_cart_img" id="cart_menu">
-            <label for="cart_menu"><i class="fas fa-cart-arrow-down"></i></label> -->
         <div class="header__right_cart">
             <cart-product></cart-product>
             <div class="header__right_cart_price">

@@ -1,11 +1,12 @@
 import axios from "axios";
 
 export default class Api {
-  static getUrl() {
-    return "product.json";
+  constructor() {
+    this.PRODUCTS = '/products'
+    this.axios = axios.create({ baseURL: process.env.VUE_APP_DB_URL || 'http://localhost:3000'})
   }
 
-  static getProducts() {
-    return axios.get(Api.getUrl());
+  getProducts(){
+    return this.axios(this.PRODUCTS)
   }
 }

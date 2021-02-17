@@ -1,9 +1,9 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import {createStore} from 'vuex'
+import store from './Vuex/store';
 import './assets/theme.css'
 
 createApp(App)
-    .use(createStore)
+    .use(store)
     .mount('#app')
 
