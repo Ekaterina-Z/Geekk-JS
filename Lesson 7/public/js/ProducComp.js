@@ -1,14 +1,14 @@
 Vue.component('products', {
     data(){
         return {
-            catalogUrl: '',
+
             products: [],
             filtered: [],
             imgCatalog: 'https://placehold.it/200x150',
         }
     },
     methods: {
-        filter(value){
+        filter(userSearch){
             let regexp = new RegExp(value, 'i');
             this.filtered = this.products.filter(el => regexp.test(el.product_name));
         }
