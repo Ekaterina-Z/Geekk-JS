@@ -2,9 +2,9 @@
 
 const app = new Vue({
     el: '#app',
-    data: {
-        userSearch: '',
-    },
+    // data: {
+    //     userSearch: '',
+    // },
     methods: {
         getJson(url){
             return fetch(url)
@@ -50,8 +50,6 @@ const app = new Vue({
               });
         },
     },
-    mounted() {
-        console.log(this);
-    }
+
 });
 

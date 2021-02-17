@@ -10,6 +10,7 @@ app.use(express.json()); // Даем знать приложению, что р�
 app.use('/', express.static('./public'));
 app.use('/api/cart', cartRouter);
 
+
 /**
  * API Каталога
  */
@@ -24,9 +25,10 @@ app.get('/api/products', (req, res) => {
 });
 
 
-// /**
-//  * API Корзины
-//  */
+/**
+ * API Корзины
+ */
+
 // app.get('/api/cart', (req, res) => {
 //   // noinspection JSUnresolvedFunction
 //   fs.readFile('./server/db/userCart.json', 'utf-8', (err, data) => {
@@ -111,12 +113,9 @@ app.get('/api/products', (req, res) => {
 // })
 
 
-/**
- * Запуск сервера
- * @type {string|number}
- */
-// const port = process.env.PORT || 3000;
-const port = 3000; // чтобы не смущало process.env.PORT (если не стартует на 3000, то меняем на другой 8080 или 8888)
+const port = process.env.PORT || 3000;
+
+
 app.listen(port, () => {
-  console.log(`Listening ${port} port`);
+  console.log(`Server started at port ${port}`);
 });
