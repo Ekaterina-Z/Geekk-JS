@@ -1,5 +1,5 @@
 Vue.component('cart', {
-    data(){
+    data() {
         return {
             imgCart: 'https://placehold.it/50x100',
             cartItems: [],
@@ -7,9 +7,9 @@ Vue.component('cart', {
         }
     },
     methods: {
-        addProduct(product){
+        addProduct(product) {
             let find = this.cartItems.find(el => el.id_product === product.id_product);
-            if(find){
+            if (find) {
                 this.$parent.putJson(`/api/cart/${find.id_product}`, {quantity: 1});
                 find.quantity++;
             } else {
@@ -33,28 +33,20 @@ Vue.component('cart', {
                     });
             } else {
                 this.$parent.deleteJson(`/api/cart/${product.id_product}`)
-                    .then(data => {if (data.result === 1) this.cartItems.splice(this.cartItems.indexOf(product), 1);});
+                    .then(data => {
+                        console.log(data);
+                        if (data.result === 1) {
+                            this.cartItems.splice(this.cartItems.indexOf(product), 1)
+                        }
+                    });
             }
         },
     },
 
-   //     remove(item) {
-    //         this.$parent.getJson(`/api/cart/${find.id_product}`)
-    //             .then(data => {
-    //                 if(data.result === 1) {
-    //                     if(item.quantity>1){
-    //                         item.quantity--;
-    //                     } else {
-    //                         this.cartItems.splice(this.cartItems.indexOf(item), 1)
-    //                     }
-    //                 }
-    //             })
-    //     },
-    // },
-    mounted(){
+    mounted() {
         this.$parent.getJson('/api/cart')
             .then(data => {
-                for(let el of data.contents){
+                for (let el of data.contents) {
                     this.cartItems.push(el);
                 }
             });
@@ -94,4 +86,3 @@ Vue.component('cart-item', {
             </div>
     `
 });
-

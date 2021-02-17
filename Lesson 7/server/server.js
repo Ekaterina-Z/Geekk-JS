@@ -76,7 +76,7 @@ app.put('/api/cart/:id', (req, res) => {
       // изменяем количество
       find.quantity += req.body.quantity;
       // пишем обратно
-       fs.writeFile('./server/db/userCart.json', JSON.stringify(cart), (err) => {
+      fs.writeFile('./server/db/userCart.json', JSON.stringify(cart), (err) => {
         if (err) {
           res.send('{"result": 0}');
         } else {
@@ -84,32 +84,31 @@ app.put('/api/cart/:id', (req, res) => {
         }
       })
     }
-  });
-app.del('/api/cart/:id', (req,res)=>{
-    const id = req.params.id
-    fs.readFile('./server/db/userCart.json', 'utf8', (err,data) =>{
-      if (err) {
-        res.sendStatus(404, JSON.stringify({result: 0, text: err}));
-      } else {
+  })
+})
+app.delete('/api/cart/:id', (req, res) => {
+  const id = req.params.id
+  fs.readFile('./server/db/userCart.json', 'utf8', (err, data) => {
+    if (err) {
+      res.sendStatus(404, JSON.stringify({result: 0, text: err}));
+    } else {
       const cart = JSON.parse(data);
-      cart.content.forEach((element, index)=>{
-        if(element.id == id){
-          cart.elements.splice(index,1)
-          fs.writeFile('./server/db/userCart.json',JSON.stringify(cart), 'utf8', (err) => {
+      cart.contents.forEach((element, index) => {
+        console.log(element);
+        if (element.id_product == id) {
+          cart.contents.splice(index, 1)
+          fs.writeFile('./server/db/userCart.json', JSON.stringify(cart), 'utf8', (err) => {
             if (err) {
               res.send('{"result": 0}');
             } else
-              return res.json({"deleted": true})
-          })
-        }
+              res.send('{"result": 1}');
           })
         }
       })
-      return res.status(404).json({errors: ['task not found']})
-    })
+    }
+  })
 })
 
-});
 
 /**
  * Запуск сервера

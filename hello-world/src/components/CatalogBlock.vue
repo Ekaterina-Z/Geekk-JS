@@ -1,7 +1,7 @@
 <template>
     <section v-if="products" class="center product-box">
        <product-card
-               v-for="product in this.$store.state.products"
+               v-for="product in products"
                :id="product.id"
                :name="product.name"
                :image="product.src"
@@ -15,28 +15,22 @@
 </template>
 
 <script>
+
     import ProductCard from "./ProductCard";
-    import {mapActions} from 'vuex';
+    import { computed } from 'vue'
+    import { useStore } from 'vuex'
+
+
     export default {
         name: "CatalogBlock",
         components: {ProductCard},
-        data () {
-            return {
+        setup() {
+            const store = useStore()
+            store.dispatch('GET_PRODUCTS_FROM_API')
+            const products = computed(() => store.getters['PRODUCTS'])
+            const showChildIdConsole = (data) => console.log(data)
 
-            }
-    },
-    computed:{},
-    methods: {
-            ...mapActions ([
-               'GET_PRODUCTS_FROM_API'
-                        ]),
-            showChildIdConsol(data){
-                console.log(data)
-            }
-
-    },
-        mounted() {
-            this.GET_PRODUCTS_FROM_API()
+            return { products, showChildIdConsole }
         }
     }
 </script>

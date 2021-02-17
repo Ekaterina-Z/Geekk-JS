@@ -7,13 +7,13 @@
       <a href="#" class="product__name">{{ name }}</a>
       <div class="product__price">$ {{ price }}</div>
     </div>
-    <a class="product__add" @click="sendDataToParent">Add to Cart</a>
+    <a class="product__add" @click="sendId">Add to Cart</a>
   </div>
 </template>
 <script>
 export default {
   name: "ProductCard",
-  emits: ["add"],
+  // emits: ["sendId"],
   props: {
     id: {
       type: String,
@@ -36,11 +36,11 @@ export default {
 
   computed: {
     imageURL() {
-      return require(`@/assets/img/${this.image}`);
+      return require(`@/assets/img/product/${this.image}`);
     }
   },
   methods: {
-    sendDataToParent() {
+    sendId() {
         this.$emit('sendId',this.id)
     }
   }
